@@ -6,6 +6,7 @@ import ApolloClient from "apollo-boost"
 import { ApolloProvider } from "react-apollo"
 import Comments from "../components/Comments"
 import CommentForm from "../components/CommentForm"
+import { graphql } from "gatsby"
 
 const BlogpostLayout = ({ data }) => {
   const post = data.wordpressPost
