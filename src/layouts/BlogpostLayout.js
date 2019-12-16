@@ -34,7 +34,7 @@ const BlogpostLayout = ({ data }) => {
               src={post.featured_media.source_url}
               alt={post.featured_media.source_url}
             />
-            <div dangerouslySetInnerHTML={{ __html: post.excerpt }} />
+            <div dangerouslySetInnerHTML={{ __html: post.content }} />
             <br />
             <hr />
             <h3 style={{ marginTop: "1rem" }}>Comments</h3>
