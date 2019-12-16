@@ -59,7 +59,7 @@ export default ({ data }) => {
                 key={node.id}
                 title={node.title}
                 image={node.featured_media.source_url}
-                excerpt={node.excerpt}
+                excerpt={innerText(node.excerpt)}
                 readmore={node.slug}
               />
             )
