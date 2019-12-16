@@ -65,12 +65,12 @@ export default ({ data }) => {
         <div className="right-thing">
           <h3>Interesting</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Perspiciatis aut laudantium neque repellendus dolorem maiores
-            voluptatibus sequi, atque ea unde illo est debitis, ipsum nihil,
-            laborum asperiores quisquam eos magni. Quo rem sed exercitationem
-            nesciunt nostrum sint voluptates doloremque repellat! Consequuntur
-            quis, minima odio ea optio vero corporis excepturi ullam.
+            This is the place to add some stuff on the side. Perspiciatis aut
+            laudantium neque repellendus dolorem maiores voluptatibus sequi,
+            atque ea unde illo est debitis, ipsum nihil, laborum asperiores
+            quisquam eos magni. Quo rem sed exercitationem nesciunt nostrum sint
+            voluptates doloremque repellat! Consequuntur quis, minima odio ea
+            optio vero corporis excepturi ullam.
           </p>
         </div>
       </div>
