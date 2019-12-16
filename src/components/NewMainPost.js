@@ -1,7 +1,6 @@
 import React from "react"
 import "./NewMainPost.css"
 import { Link } from "gatsby"
-import innertext from "innertext"
 
 const NewMainPost = props => {
   const background =
@@ -17,7 +16,10 @@ const NewMainPost = props => {
           className="main-title"
           dangerouslySetInnerHTML={{ __html: props.post.title }}
         />
-        <div className="lead">{props.post.excerpt}</div>
+        <div
+          className="lead"
+          dangerouslySetInnerHTML={{ __html: props.post.excerpt }}
+        />
         <Link className="main-article-link" to={link}>
           Read More...
         </Link>

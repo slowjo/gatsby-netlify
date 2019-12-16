@@ -6,6 +6,7 @@ import PostCard from "../components/PostCard"
 import NewMainPost from "../components/NewMainPost"
 import FeaturedArticles from "../components/FeaturedArticles"
 import LargeArticle from "../components/LargeArticle"
+import innertext from "innertext"
 
 export default ({ data }) => {
   data.allWordpressPost.nodes.sort((a, b) => (a.date < b.date ? 1 : -1))
@@ -32,6 +33,9 @@ export default ({ data }) => {
   const largeArticles = data.allWordpressPost.nodes.filter(
     node => node.categories[0].name === "large"
   )
+
+  console.log(innertext(frontArticles[0].excerpt))
+  console.log(frontArticles[0].excerpt)
 
   return (
     <PrimaryLayout>
@@ -64,12 +68,13 @@ export default ({ data }) => {
         <div className="right-thing">
           <h3>Interesting</h3>
           <p>
-            This is the place to add some more stuff on the side. Perspiciatis
-            aut laudantium neque repellendus dolorem maiores voluptatibus sequi,
-            atque ea unde illo est debitis, ipsum nihil, laborum asperiores
-            quisquam eos magni. Quo rem sed exercitationem nesciunt nostrum sint
-            voluptates doloremque repellat! Consequuntur quis, minima odio ea
-            optio vero corporis excepturi ullam.
+            {innertext(frontArticles[0].excerpt)} This is the place to add some
+            more stuff on the side. Perspiciatis aut laudantium neque
+            repellendus dolorem maiores voluptatibus sequi, atque ea unde illo
+            est debitis, ipsum nihil, laborum asperiores quisquam eos magni. Quo
+            rem sed exercitationem nesciunt nostrum sint voluptates doloremque
+            repellat! Consequuntur quis, minima odio ea optio vero corporis
+            excepturi ullam.
           </p>
         </div>
       </div>
