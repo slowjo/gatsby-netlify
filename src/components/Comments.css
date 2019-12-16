@@ -1,0 +1,9 @@
+.comments {
+  background: lightgrey;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.comments-date {
+  margin-bottom: 0.5rem;
+}

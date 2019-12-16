@@ -1,0 +1,35 @@
+.comment-form label,
+.comment-form input {
+  display: block;
+}
+
+.comment-form input,
+.comment-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.comment-form textarea {
+  height: 10rem;
+}
+
+.comment-form .btn {
+  background: black;
+  color: white;
+  /* border: 2px solid black; */
+  /* border-radius: 5px; */
+  border: none;
+  padding: 0.5rem 2rem;
+}
+
+.comment-form .btn:hover {
+  background: #0f0f0f;
+  cursor: pointer;
+  /* color: white; */
+}
+
+.comment-form .form-group {
+  margin: 0.75rem 0;
+}

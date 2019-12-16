@@ -1,0 +1,23 @@
+.main-post {
+  height: 70vh;
+  margin-bottom: 1rem;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.main-post-content {
+  /* color: white; */
+  background: white;
+  /* background: lightgrey; */
+  padding: 2rem 2rem;
+  max-width: 35rem;
+  text-decoration: none;
+  margin: 1rem;
+}
+
+.main-post-content .look-like-link {
+  text-decoration: underline;
+}

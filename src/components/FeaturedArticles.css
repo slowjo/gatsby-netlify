@@ -1,0 +1,88 @@
+h2 {
+  margin-bottom: 0.5rem;
+}
+
+.main-container-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-gap: 1rem; */
+  padding-bottom: 2rem;
+  border-bottom: 0.5px solid lightgrey;
+}
+
+.three {
+  background: lightgreen;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.upper-one {
+  /* background: url("./assorted-cooked-foods-3071816.jpg") no-repeat center
+    center/cover; */
+}
+
+.upper-two {
+  /* background: url("./person-riding-bicycle-3250580.jpg") no-repeat center
+    center/cover; */
+}
+
+.upper-three {
+  /* background: url("./bird-s-eye-view-of-ocean-during-daytime-2707756.jpg")
+    no-repeat center center/cover; */
+}
+
+.upper {
+  grid-row: 1 / 7;
+  grid-column: 1 / 17;
+}
+
+.middle {
+  background: white;
+  /* background: darkblue; */
+  /* color: white; */
+  grid-column: 2 / 17;
+  grid-row: 6 / 11;
+  z-index: 1;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  /* text-align: center; */
+  /* border-top: 1px solid black; */
+  /* border-left: 1px solid black; */
+  padding: 1rem;
+}
+
+.lower {
+  grid-column: 1 / 17;
+  grid-row: 7 / 11;
+  background: white;
+  /* background: darkblue; */
+}
+
+.four {
+  background: lightyellow;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.five {
+  background: lightpink;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+@media (max-width: 700px) {
+  .main-container-two {
+    display: block;
+  }
+
+  .main-container-two-content {
+    min-height: 300px;
+  }
+}

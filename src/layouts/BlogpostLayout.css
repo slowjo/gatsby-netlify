@@ -1,0 +1,26 @@
+.container {
+  max-width: 750px;
+  margin: auto;
+  padding: 2rem 2rem;
+  overflow: hidden;
+}
+
+.container h1 {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.post-image {
+  max-height: 50vh;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.success-message {
+  background: #2cece3;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
