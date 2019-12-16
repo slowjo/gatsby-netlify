@@ -32,7 +32,6 @@ export default ({ data }) => {
   const largeArticles = data.allWordpressPost.nodes.filter(
     node => node.categories[0].name === "large"
   )
-  console.log(largeArticles, "hey")
 
   return (
     <PrimaryLayout>
