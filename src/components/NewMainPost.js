@@ -17,7 +17,10 @@ const NewMainPost = props => {
           className="main-title"
           dangerouslySetInnerHTML={{ __html: props.post.title }}
         />
-        <div className="lead">{innertext(props.post.excerpt)}</div>
+        <div
+          className="lead"
+          dangerouslySetInnerHTML={{ __html: props.post.excerpt }}
+        />
         <Link className="main-article-link" to={link}>
           Read More...
         </Link>
