@@ -17,7 +17,7 @@ const BlogpostLayout = ({ data }) => {
 
   const client = new ApolloClient({
     fetch,
-    uri: "http://thebloggiblog.com/graphql",
+    uri: "https://thebloggiblog.com/graphql",
   })
 
   const [displayState, setDisplayState] = useState("none")
