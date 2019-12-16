@@ -1,6 +1,7 @@
 import React from "react"
 import "./LargeArticle.css"
 import { Link } from "gatsby"
+import innertext from "innertext"
 
 const LargeArticle = props => {
   const background =
@@ -8,6 +9,7 @@ const LargeArticle = props => {
     props.post.featured_media.source_url +
     "') no-repeat center center/cover"
   const link = "/" + props.post.slug
+  const text = innertext(props.post.excerpt)
 
   return (
     <div className="main-container-one">
@@ -16,10 +18,7 @@ const LargeArticle = props => {
           className="main-title"
           dangerouslySetInnerHTML={{ __html: props.post.title }}
         />
-        <p
-          className="lead"
-          dangerouslySetInnerHTML={{ __html: props.post.excerpt }}
-        />
+        <p className="lead" dangerouslySetInnerHTML={{ __html: text }} />
         <Link className="main-article-link" to={link}>
           Read More...
         </Link>

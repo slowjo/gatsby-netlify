@@ -68,13 +68,12 @@ export default ({ data }) => {
         <div className="right-thing">
           <h3>Interesting</h3>
           <p>
-            {innertext(frontArticles[0].excerpt)} This is the place to add some
-            more stuff on the side. Perspiciatis aut laudantium neque
-            repellendus dolorem maiores voluptatibus sequi, atque ea unde illo
-            est debitis, ipsum nihil, laborum asperiores quisquam eos magni. Quo
-            rem sed exercitationem nesciunt nostrum sint voluptates doloremque
-            repellat! Consequuntur quis, minima odio ea optio vero corporis
-            excepturi ullam.
+            This is the place to add some more stuff on the side. Perspiciatis
+            aut laudantium neque repellendus dolorem maiores voluptatibus sequi,
+            atque ea unde illo est debitis, ipsum nihil, laborum asperiores
+            quisquam eos magni. Quo rem sed exercitationem nesciunt nostrum sint
+            voluptates doloremque repellat! Consequuntur quis, minima odio ea
+            optio vero corporis excepturi ullam.
           </p>
         </div>
       </div>
@@ -97,7 +96,7 @@ export default ({ data }) => {
                 key={node.id}
                 title={node.title}
                 image={node.featured_media.source_url}
-                excerpt={node.excerpt}
+                excerpt={innertext(node.excerpt)}
                 readmore={node.slug}
               />
             )

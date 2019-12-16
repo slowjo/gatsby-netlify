@@ -1,6 +1,7 @@
 import React from "react"
 import "./FeaturedArticles.css"
 import { Link } from "gatsby"
+import innertext from "innertext"
 
 const FeaturedArticles = props => {
   // const linkOne = "/" + props.readmore
@@ -22,6 +23,10 @@ const FeaturedArticles = props => {
   const linkTwo = "/" + props.posts[1].slug
   const linkThree = "/" + props.posts[2].slug
 
+  const textOne = innertext(props.posts[0].excerpt)
+  const textTwo = innertext(props.posts[1].excerpt)
+  const textThree = innertext(props.posts[2].excerpt)
+
   return (
     <div className="main-container-two">
       <div className="three main-container-two-content">
@@ -29,7 +34,7 @@ const FeaturedArticles = props => {
         <div className="middle">
           <div className="middle-content">
             <h3 dangerouslySetInnerHTML={{ __html: props.posts[0].title }} />
-            <p dangerouslySetInnerHTML={{ __html: props.posts[0].excerpt }} />
+            <p dangerouslySetInnerHTML={{ __html: textOne }} />
             <Link className="read-more-button" to={linkOne}>
               Read More...
             </Link>
@@ -42,7 +47,7 @@ const FeaturedArticles = props => {
         <div className="middle">
           <div className="middle-content">
             <h3 dangerouslySetInnerHTML={{ __html: props.posts[1].title }} />
-            <p dangerouslySetInnerHTML={{ __html: props.posts[1].excerpt }} />
+            <p dangerouslySetInnerHTML={{ __html: textTwo }} />
             <Link className="read-more-button" to={linkTwo}>
               Read More...
             </Link>
@@ -58,7 +63,7 @@ const FeaturedArticles = props => {
         <div className="middle">
           <div className="middle-content">
             <h3 dangerouslySetInnerHTML={{ __html: props.posts[2].title }} />
-            <p dangerouslySetInnerHTML={{ __html: props.posts[2].excerpt }} />
+            <p dangerouslySetInnerHTML={{ __html: textThree }} />
             <Link className="read-more-button" to={linkThree}>
               Read More...
             </Link>
