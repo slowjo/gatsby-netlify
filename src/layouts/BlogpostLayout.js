@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import fetch from "isomorphic-fetch"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import "./BlogpostLayout.css"
@@ -15,6 +16,7 @@ const BlogpostLayout = ({ data }) => {
   const currPostId = data.wordpressPost.wordpress_id
 
   const client = new ApolloClient({
+    fetch,
     uri: "http://thebloggiblog.com/graphql",
   })
 
