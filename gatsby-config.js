@@ -20,5 +20,17 @@ module.exports = {
         hostingWPCOM: false,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `TheJovialSwanson`,
+        short_name: `Swanson`,
+        start_url: `/`,
+        background_color: `#4169e1`,
+        theme_color: `#ffffff`,
+        display: `standalone`,
+      },
+    },
+    `gatsby-plugin-offline`,
   ],
 }
