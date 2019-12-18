@@ -32,7 +32,7 @@ const BlogpostLayout = ({ data }) => {
       <div style={{ background: "#f4f4f4" }}>
         <Navbar />
         <div className="large-container">
-          <div className="container">
+          <div className="container blogpost-container">
             <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
             <img
               className="post-image"
@@ -43,7 +43,10 @@ const BlogpostLayout = ({ data }) => {
               className="caption"
               dangerouslySetInnerHTML={{ __html: caption }}
             />
-            <p dangerouslySetInnerHTML={{ __html: post.content }} />
+            <p
+              className="content"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
             <br />
             <hr />
             <h3 style={{ marginTop: "1rem" }}>Comments</h3>

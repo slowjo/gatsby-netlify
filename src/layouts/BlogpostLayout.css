@@ -5,9 +5,9 @@
   overflow: hidden;
 }
 
-.container h1 {
-  text-align: center;
-  font-size: 4rem;
+.blogpost-container h1 {
+  /* text-align: center; */
+  font-size: 3.5rem;
   margin-bottom: 1rem;
 }
 
@@ -31,4 +31,27 @@
   font-size: 0.7rem;
   text-align: right;
   margin-top: -0.3rem;
+}
+
+.content h5 {
+  font-size: 1.4rem;
+}
+
+.content p {
+  font-size: 1.4rem;
+  font-family: "Times New Roman", Times, serif;
+}
+
+@media (max-width: 768px) {
+  .blogpost-container h1 {
+    font-size: 2rem;
+  }
+
+  .content h5 {
+    font-size: 1.2rem;
+  }
+
+  .content p {
+    font-size: 1.2rem;
+  }
 }
