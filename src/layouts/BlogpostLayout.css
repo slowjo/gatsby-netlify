@@ -28,4 +28,6 @@
 .caption {
   margin-bottom: 1rem;
   font-size: 0.7rem;
+  text-align: right;
+  margin-top: -0.3rem;
 }
