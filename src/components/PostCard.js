@@ -15,7 +15,10 @@ const PostCard = props => {
       <div className="card-right">
         <div className="card-right-content">
           <h3 dangerouslySetInnerHTML={{ __html: props.title }} />
-          <p dangerouslySetInnerHTML={{ __html: props.excerpt }} />
+          <p
+            className="excerpt"
+            dangerouslySetInnerHTML={{ __html: props.excerpt }}
+          />
           <Link className="read-more-button" to={link}>
             Read More...
           </Link>

@@ -12,7 +12,8 @@
 }
 
 .post-image {
-  max-height: 50vh;
+  /* min-height: 500px; */
+  /* max-height: 50vh; */
   width: 100%;
   margin: auto;
   /* margin-bottom: 1rem; */
