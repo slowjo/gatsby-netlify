@@ -25,6 +25,8 @@ const BlogpostLayout = ({ data }) => {
 
   const caption = innertext(post.featured_media.caption)
 
+  console.log(post.content)
+
   return (
     <ApolloProvider client={client}>
       <div style={{ background: "#f4f4f4" }}>
@@ -41,7 +43,7 @@ const BlogpostLayout = ({ data }) => {
               className="caption"
               dangerouslySetInnerHTML={{ __html: caption }}
             />
-            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+            <p dangerouslySetInnerHTML={{ __html: post.content }} />
             <br />
             <hr />
             <h3 style={{ marginTop: "1rem" }}>Comments</h3>

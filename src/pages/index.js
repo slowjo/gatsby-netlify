@@ -7,6 +7,7 @@ import NewMainPost from "../components/NewMainPost"
 import FeaturedArticles from "../components/FeaturedArticles"
 import LargeArticle from "../components/LargeArticle"
 import innertext from "innertext"
+import "./index.css"
 
 export default ({ data }) => {
   data.allWordpressPost.nodes.sort((a, b) => (a.date < b.date ? 1 : -1))
