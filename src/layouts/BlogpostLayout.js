@@ -8,6 +8,7 @@ import { ApolloProvider } from "react-apollo"
 import Comments from "../components/Comments"
 import CommentForm from "../components/CommentForm"
 import { graphql } from "gatsby"
+import innertext from "innertext"
 
 const BlogpostLayout = ({ data }) => {
   const post = data.wordpressPost
@@ -22,6 +23,8 @@ const BlogpostLayout = ({ data }) => {
 
   const [displayState, setDisplayState] = useState("none")
 
+  const caption = innertext(post.featured_media.caption)
+
   return (
     <ApolloProvider client={client}>
       <div style={{ background: "#f4f4f4" }}>
@@ -33,6 +36,10 @@ const BlogpostLayout = ({ data }) => {
               className="post-image"
               src={post.featured_media.source_url}
               alt={post.featured_media.source_url}
+            />
+            <div
+              className="caption"
+              dangerouslySetInnerHTML={{ __html: caption }}
             />
             <div dangerouslySetInnerHTML={{ __html: post.content }} />
             <br />
@@ -71,6 +78,7 @@ export const query = graphql`
       }
       featured_media {
         source_url
+        caption
       }
       excerpt
       wordpress_id

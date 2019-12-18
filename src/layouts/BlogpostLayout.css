@@ -15,7 +15,7 @@
   max-height: 50vh;
   width: 100%;
   margin: auto;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   object-fit: cover;
 }
 
@@ -23,4 +23,9 @@
   background: #2cece3;
   padding: 1rem;
   margin-bottom: 1rem;
+}
+
+.caption {
+  margin-bottom: 1rem;
+  font-size: 0.7rem;
 }
