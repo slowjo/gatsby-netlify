@@ -28,7 +28,7 @@
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   opacity: 0.9;
-  background: royalblue;
+  background: teal;
   color: white;
 }
 
@@ -62,7 +62,7 @@
   background: black; */
   border-bottom: 0.25rem solid white;
   background: white;
-  color: #121296;
+  color: teal;
 }
 
 .active {

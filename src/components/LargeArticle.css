@@ -28,7 +28,8 @@ h2 {
   grid-row: 1 / 3;
   /* background: coral; */
   /* background: black; */
-  background: royalblue;
+  /* background: #e73e85; */
+  background: teal;
   padding: 3rem;
   color: white;
 }
