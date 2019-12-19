@@ -2,12 +2,14 @@ import React from "react"
 import "./NewMainPost.css"
 import { Link } from "gatsby"
 import innertext from "innertext"
+import BackgroundImage from "gatsby-background-image"
 
 const NewMainPost = props => {
   const background =
     "url('" +
     props.post.featured_media.source_url +
     "') no-repeat center center/cover"
+  const imageData = props.post.featured_media.localFile.childImageSharp.fluid
   const link = "/" + props.post.slug
   const text = innertext(props.post.excerpt)
 
@@ -27,7 +29,8 @@ const NewMainPost = props => {
           style={{ background: background }}
         ></div>
       </div>
-      <div className="one" style={{ background: background }}></div>
+      {/* <div className="one" style={{ background: background }}></div> */}
+      <BackgroundImage className="one" fluid={imageData} />
       <div className="two">
         <div className="two-content">
           <h1

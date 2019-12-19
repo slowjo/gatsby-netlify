@@ -9,23 +9,23 @@ const FeaturedArticles = props => {
   // const linkThree = "/" + props.readmore
   const urlOne =
     "url('" +
-    props.posts[0].featured_media.source_url +
+    props.posts[0].node.featured_media.source_url +
     "') no-repeat center center/cover"
   const urlTwo =
     "url('" +
-    props.posts[1].featured_media.source_url +
+    props.posts[1].node.featured_media.source_url +
     "') no-repeat center center/cover"
   const urlThree =
     "url('" +
-    props.posts[2].featured_media.source_url +
+    props.posts[2].node.featured_media.source_url +
     "') no-repeat center center/cover"
-  const linkOne = "/" + props.posts[0].slug
-  const linkTwo = "/" + props.posts[1].slug
-  const linkThree = "/" + props.posts[2].slug
+  const linkOne = "/" + props.posts[0].node.slug
+  const linkTwo = "/" + props.posts[1].node.slug
+  const linkThree = "/" + props.posts[2].node.slug
 
-  const textOne = innertext(props.posts[0].excerpt)
-  const textTwo = innertext(props.posts[1].excerpt)
-  const textThree = innertext(props.posts[2].excerpt)
+  const textOne = innertext(props.posts[0].node.excerpt)
+  const textTwo = innertext(props.posts[1].node.excerpt)
+  const textThree = innertext(props.posts[2].node.excerpt)
 
   return (
     <div className="main-container-two">
@@ -33,7 +33,9 @@ const FeaturedArticles = props => {
         <div className="upper upper-one" style={{ background: urlOne }}></div>
         <div className="middle">
           <div className="middle-content">
-            <h3 dangerouslySetInnerHTML={{ __html: props.posts[0].title }} />
+            <h3
+              dangerouslySetInnerHTML={{ __html: props.posts[0].node.title }}
+            />
             <p dangerouslySetInnerHTML={{ __html: textOne }} />
             <Link className="read-more-button" to={linkOne}>
               Read More...
@@ -46,7 +48,9 @@ const FeaturedArticles = props => {
         <div className="upper upper-two" style={{ background: urlTwo }}></div>
         <div className="middle">
           <div className="middle-content">
-            <h3 dangerouslySetInnerHTML={{ __html: props.posts[1].title }} />
+            <h3
+              dangerouslySetInnerHTML={{ __html: props.posts[1].node.title }}
+            />
             <p dangerouslySetInnerHTML={{ __html: textTwo }} />
             <Link className="read-more-button" to={linkTwo}>
               Read More...
@@ -62,7 +66,9 @@ const FeaturedArticles = props => {
         ></div>
         <div className="middle">
           <div className="middle-content">
-            <h3 dangerouslySetInnerHTML={{ __html: props.posts[2].title }} />
+            <h3
+              dangerouslySetInnerHTML={{ __html: props.posts[2].node.title }}
+            />
             <p dangerouslySetInnerHTML={{ __html: textThree }} />
             <Link className="read-more-button" to={linkThree}>
               Read More...

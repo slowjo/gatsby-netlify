@@ -20,6 +20,18 @@ module.exports = {
         hostingWPCOM: false,
       },
     },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: "WordpressPost",
+        imagePath: "source_url",
+        // OPTIONAL: Name you want to give new image field on the node.
+        // Defaults to 'localImage'.
+        name: "allItemImages",
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -10,37 +10,65 @@ import innertext from "innertext"
 import "./index.css"
 
 export default ({ data }) => {
-  data.allWordpressPost.nodes.sort((a, b) => (a.date < b.date ? 1 : -1))
+  // data.allWordpressPost.nodes.sort((a, b) => (a.date < b.date ? 1 : -1))
+  data.allWordpressPost.edges.sort((a, b) =>
+    a.node.date < b.node.date ? 1 : -1
+  )
 
-  const frontArticles = data.allWordpressPost.nodes.filter(
-    node => node.categories[0].name === "frontpage"
+  // const frontArticles = data.allWordpressPost.nodes.filter(
+  //   node => node.categories[0].name === "frontpage"
+  // )
+  const frontArticles = data.allWordpressPost.edges.filter(
+    edge => edge.node.categories[0].name === "frontpage"
   )
-  const nonFront = data.allWordpressPost.nodes.filter(
-    node => node.categories[0].name !== "frontpage"
+
+  // const nonFront = data.allWordpressPost.nodes.filter(
+  //   node => node.categories[0].name !== "frontpage"
+  // )
+  const nonFront = data.allWordpressPost.edges.filter(
+    edge => edge.node.categories[0].name !== "frontpage"
   )
-  const featured = data.allWordpressPost.nodes.filter(
-    node => node.categories[0].name === "frontfeature"
+
+  // const featured = data.allWordpressPost.nodes.filter(
+  //   node => node.categories[0].name === "frontfeature"
+  // )
+  const featured = data.allWordpressPost.edges.filter(
+    edge => edge.node.categories[0].name === "frontfeature"
   )
-  const listed = data.allWordpressPost.nodes.filter(
-    node => node.categories[0].name === "listed"
+
+  // const listed = data.allWordpressPost.nodes.filter(
+  //   node => node.categories[0].name === "listed"
+  // )
+  const listed = data.allWordpressPost.edges.filter(
+    edge => edge.node.categories[0].name === "listed"
   )
-  const listedTwo = data.allWordpressPost.nodes.filter(
-    node => node.categories[0].name === "listedtwo"
+
+  // const listedTwo = data.allWordpressPost.nodes.filter(
+  //   node => node.categories[0].name === "listedtwo"
+  // )
+  const listedTwo = data.allWordpressPost.edges.filter(
+    edge => edge.node.categories[0].name === "listedtwo"
   )
+
   //   const featured = data.allWordpressPost.nodes.slice(0, 3)
   //   const dataLength = data.allWordpressPost.nodes.slice(0).length - 1
   const dataLength = listed.length - 1
   console.log(dataLength)
-  const largeArticles = data.allWordpressPost.nodes.filter(
-    node => node.categories[0].name === "large"
+  // const largeArticles = data.allWordpressPost.nodes.filter(
+  //   node => node.categories[0].name === "large"
+  // )
+  const largeArticles = data.allWordpressPost.edges.filter(
+    edge => edge.node.categories[0].name === "large"
   )
 
-  console.log(innertext(frontArticles[0].excerpt))
-  console.log(frontArticles[0].excerpt)
+  // console.log(innertext(frontArticles[0].excerpt))
+  console.log(innertext(frontArticles[0].node.excerpt))
+  // console.log(frontArticles[0].excerpt)
+  console.log(frontArticles[0].node.excerpt)
 
   return (
     <PrimaryLayout>
-      <NewMainPost post={frontArticles[0]} />
+      <NewMainPost post={frontArticles[0].node} />
       <FeaturedArticles posts={featured} />
       <div className="front-page-container">
         <div className="left-thing">
@@ -57,11 +85,11 @@ export default ({ data }) => {
             return (
               <PostCard
                 extraClass={extraClass}
-                key={node.id}
-                title={node.title}
-                image={node.featured_media.source_url}
-                excerpt={innertext(node.excerpt)}
-                readmore={node.slug}
+                key={node.node.id}
+                title={node.node.title}
+                image={node.node.featured_media.source_url}
+                excerpt={innertext(node.node.excerpt)}
+                readmore={node.node.slug}
               />
             )
           })}
@@ -78,7 +106,7 @@ export default ({ data }) => {
           </p>
         </div>
       </div>
-      <LargeArticle post={largeArticles[1]} />
+      <LargeArticle post={largeArticles[1].node} />
       <div className="front-page-container">
         <div className="left-thing">
           {listedTwo.map((node, index) => {
@@ -94,11 +122,11 @@ export default ({ data }) => {
             return (
               <PostCard
                 extraClass={extraClass}
-                key={node.id}
-                title={node.title}
-                image={node.featured_media.source_url}
-                excerpt={innertext(node.excerpt)}
-                readmore={node.slug}
+                key={node.node.id}
+                title={node.node.title}
+                image={node.node.featured_media.source_url}
+                excerpt={innertext(node.node.excerpt)}
+                readmore={node.node.slug}
               />
             )
           })}
@@ -115,7 +143,7 @@ export default ({ data }) => {
           </p>
         </div>
       </div>
-      <LargeArticle post={largeArticles[0]} />
+      <LargeArticle post={largeArticles[0].node} />
     </PrimaryLayout>
   )
 }
@@ -123,17 +151,26 @@ export default ({ data }) => {
 export const query = graphql`
   {
     allWordpressPost {
-      nodes {
-        title
-        slug
-        featured_media {
-          source_url
-        }
-        excerpt
-        id
-        date
-        categories {
-          name
+      edges {
+        node {
+          title
+          slug
+          featured_media {
+            source_url
+            localFile {
+              childImageSharp {
+                fluid(quality: 90, maxWidth: 1920) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          excerpt
+          id
+          date
+          categories {
+            name
+          }
         }
       }
     }
