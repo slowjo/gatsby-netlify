@@ -10,7 +10,7 @@ import innertext from "innertext"
 import "./index.css"
 
 export default ({ data }) => {
-  const maintenance = true
+  const maintainance = true
 
   // data.allWordpressPost.nodes.sort((a, b) => (a.date < b.date ? 1 : -1))
   data.allWordpressPost.edges.sort((a, b) =>
