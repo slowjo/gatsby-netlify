@@ -10,6 +10,8 @@ import innertext from "innertext"
 import "./index.css"
 
 export default ({ data }) => {
+  const maintenance = true
+
   // data.allWordpressPost.nodes.sort((a, b) => (a.date < b.date ? 1 : -1))
   data.allWordpressPost.edges.sort((a, b) =>
     a.node.date < b.node.date ? 1 : -1
@@ -65,6 +67,10 @@ export default ({ data }) => {
   console.log(innertext(frontArticles[0].node.excerpt))
   // console.log(frontArticles[0].excerpt)
   console.log(frontArticles[0].node.excerpt)
+
+  if (maintainance) {
+    return <h1>Sorry, nothing here right now</h1>
+  }
 
   return (
     <PrimaryLayout>
